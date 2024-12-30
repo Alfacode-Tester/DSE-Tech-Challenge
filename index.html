@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSE Tech Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="descriptorSection">
+        <h1 id="mainHeader">Developer Success Engineering - Tech Challenge</h1>
+        <p id="appDescription">The application first creates an access token based on the selected provider options. Then the application retrieves and displays the employer’s company, directory, individual, and employment information.</p>
+    </section>
+    <section id="providerSection">
+        <h1 id="header">Select a Provider</h1>
+        <img id="loaderImage" src="https://i.gifer.com/XVo6.gif" alt="loader" style="
+    width: 25%; display: none;">
+        <select name="provider_options" id="providers">
+            <option value="gusto">Gusto</option>
+            <option value="adp_run">ADP Run</option>
+            <option value="paycor">Paycor</option>
+            <option value="workday">Workday</option>
+          </select><br>
+          <button id="createProviderBtn" type="submit">Create Provider</button>
+        <br><br><br>
+        <img id="finchLogo" src="https://cdn.prod.website-files.com/63dd790039a2b29044f7d608/63dd95e9ebe31f280b24f322_logo.svg" alt="Finch Logo">
+    </section>
+
+    <section id="companySection" style="display: none;">
+        <h1 style="text-align: center;">Company Details:</h1>
+        <div style="display: flex;">
+            <div style="flex:1; margin:10px">
+                <h5>Company Name:</h5>
+                <p id="companyName"></p>
+                <h5>Company ID:</h5>
+                <p id="companyId"></p>
+                <h5>Routing Number:</h5>
+                <p id="routingNum"></p>
+                <h5>EIN:</h5>
+                <p id="ein"></p>
+                <h5>Locations:</h5>
+                <p id="locations"></p>
+            </div>
+            <div style="flex:1; margin:10px">
+                <h5>Company Email:</h5>
+                <p id="companyEmail"></p>
+                <h5>Company Phone:</h5>
+                <p id="companyPhone"></p>
+                <h5>Entity Type:</h5>
+                <p id="entityType"></p>
+                <h5>Entity Sub Type:</h5>
+                <p id="entitySub"></p>
+                <h5>Departments:</h5>
+                <p id="mainDepartments"></p>
+            </div>  
+        </div>
+    </section>
+
+    <div id="hiddenButtons">
+        <button id="deleteTokenBtn" type="submit" style="display: none; margin: 5px;">Delete Access Token</button>
+        <button id="directoryBtn" type="submit" style="display: none; margin: 5px;">Open Company Directory</button>
+        <button id="CompanyInfoBtn" type="submit" style="display: none; margin: 5px;">Display Company Info</button>
+    </div>
+
+
+    <!-- Hidden Individual Modal -->
+    <div id="individualModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="individualClose">&times;</span>
+            <div id=individualDataGroup>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hidden Employment Modal -->
+    <div id="emloymentModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="employmentClose">&times;</span>
+            <div id=employmentDataGroup>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Individual and Employment data to modal logic -->
+    <script src="individualModal.js"></script>
+    <script src="employmentModal.js"></script>
+    <script src="getCompanyInfo.js"></script>
+    <script src="getDirectoryInfo.js"></script>
+    <script src="tokenManager.js"></script>
+    <script src="buttonHiders.js"></script>
+
+    <div id="directoryTable"></div>
+
+
+    
+    <script>
+        // variable initializations
+        let selectedProviderId = "";
+
+        const createProviderBtn = document.getElementById("createProviderBtn");
+        const deleteTokenBtn = document.getElementById("deleteTokenBtn");
+        const directoryBtn = document.getElementById("directoryBtn");
+        const CompanyInfoBtn = document.getElementById("CompanyInfoBtn"); 
+        const providerOptions = document.getElementById("providers"); 
+        const providerSection = document.getElementById("providerSection");
+        const descriptorSection = document.getElementById("descriptorSection");
+        
+
+        let companyInfo 
+        let employeeDirectory 
+    </script>
+</body>
+</html>
+
