@@ -4,13 +4,11 @@ const cors = require("cors");
 const axios = require("axios");
 
 
-// require("dotenv").config();
-
 const app = express();
 
 app.use(cors());
 
-
+// api call to create new access token and associate with provider via Sandbox Connection API
 app.get('/create', async (req, res) => {
     let data = JSON.stringify({
         "provider_id": req.query.provider_id,
@@ -39,6 +37,8 @@ app.get('/create', async (req, res) => {
       });
 })
 
+
+// api call to disconnect active access token in application
 app.get('/delete', async (req, res) => {      
     let config = {
         method: 'post',
@@ -62,7 +62,7 @@ app.get('/delete', async (req, res) => {
 
 
 
-// // API call to get directory
+// // api call to get company directory
 app.get("/directory", (req, res) => {
   const options = {
     method: "GET",
@@ -84,7 +84,7 @@ app.get("/directory", (req, res) => {
     });
 });
 
-// // API call to company
+// // api call to get company data
 app.get("/company", (req, res) => {
     const options = {
       method: "GET",
@@ -111,7 +111,7 @@ app.get("/company", (req, res) => {
 
 
 
-//   API call to individual
+//   api call to individual data
 app.get("/individual", (req, res) => {
     const axios = require('axios');
     let data = JSON.stringify({
@@ -144,7 +144,7 @@ app.get("/individual", (req, res) => {
     });
 });
 
-//   API call to employment
+//   api call to employment data for individuals
 app.get("/employment", (req, res) => {
     const axios = require('axios');
     let data = JSON.stringify({

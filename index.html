@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Initial application display -->
     <section id="descriptorSection">
         <h1 id="mainHeader">Developer Success Engineering - Tech Challenge</h1>
         <p id="appDescription">The application first creates an access token based on the selected provider options. Then the application retrieves and displays the employer’s company, directory, individual, and employment information.</p>
     </section>
     <section id="providerSection">
         <h1 id="header">Select a Provider</h1>
-        <img id="loaderImage" src="https://i.gifer.com/XVo6.gif" alt="loader" style="
-    width: 25%; display: none;">
+        <img id="loaderImage" src="https://i.gifer.com/XVo6.gif" alt="loader" style="width: 25%; display: none;">
         <select name="provider_options" id="providers">
             <option value="gusto">Gusto</option>
             <option value="adp_run">ADP Run</option>
@@ -26,6 +26,7 @@
         <img id="finchLogo" src="https://cdn.prod.website-files.com/63dd790039a2b29044f7d608/63dd95e9ebe31f280b24f322_logo.svg" alt="Finch Logo">
     </section>
 
+    <!-- company data section structure -->
     <section id="companySection" style="display: none;">
         <h1 style="text-align: center;">Company Details:</h1>
         <div style="display: flex;">
@@ -56,6 +57,7 @@
         </div>
     </section>
 
+    <!-- Buttons that will be hidden and displayed based on application logic -->
     <div id="hiddenButtons">
         <button id="deleteTokenBtn" type="submit" style="display: none; margin: 5px;">Delete Access Token</button>
         <button id="directoryBtn" type="submit" style="display: none; margin: 5px;">Open Company Directory</button>
@@ -95,6 +97,7 @@
     <script src="tokenManager.js"></script>
     <script src="buttonHiders.js"></script>
 
+    <!-- Directory table div where data will be dynamically added-->
     <div id="directoryTable"></div>
 
 
