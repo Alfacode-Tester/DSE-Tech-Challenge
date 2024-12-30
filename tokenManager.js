@@ -22,7 +22,9 @@
             deleteTokenBtn.style.display = "";
             directoryBtn.style.display = "";
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+        document.querySelector("#providerSection").innerHTML = '<p>Error with creating token, please retry</p>\n<button onclick="window.location.reload();">Refresh</button>'
+        console.error('Error:', error)});
     });
 
 
