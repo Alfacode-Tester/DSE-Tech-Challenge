@@ -11,7 +11,7 @@ The application is primarily built with JavaScript and CSS on the frontend to ha
 1. [Install Node.js](https://nodejs.org/en/download/current) if not already installed on device. 
 
 
-2 . [Update NPM](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) using the following command in terminal:
+2. [Update NPM](https://docs.npmjs.com/try-the-latest-stable-version-of-npm) using the following command in terminal:
 ```
 npm install -g npm@latest
 ```
@@ -19,6 +19,9 @@ npm install -g npm@latest
 ## How to Run Application
 
 1. Clone this GitHub repo
+```
+https://github.com/Alfacode-Tester/DSE-Tech-Challenge
+```
 
 2. Install dependencies via:
 
